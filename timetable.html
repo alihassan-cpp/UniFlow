@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UniFlow — Timetable</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body class="app-page">
+
+
+<div class="app-layout">
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+
+        <a href="index.html"
+           class="brand">
+
+            <span class="brand-mark">
+                ✦
+            </span>
+
+            <span class="brand-text">
+                UniFlow
+            </span>
+
+        </a>
+
+
+        <p class="nav-label">
+            WORKSPACE
+        </p>
+
+
+        <nav>
+
+            <a href="dashboard.html">
+
+                <span>⌂</span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="timetable.html"
+               class="active">
+
+                <span>▦</span>
+
+                <span>
+                    Timetable
+                </span>
+
+            </a>
+
+
+            <a href="tasks.html">
+
+                <span>✓</span>
+
+                <span>
+                    Tasks
+                </span>
+
+            </a>
+
+
+            <a href="courses.html">
+
+                <span>◫</span>
+
+                <span>
+                    Courses
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <p class="nav-label">
+            PERSONAL
+        </p>
+
+
+        <nav>
+
+            <a href="#">
+
+                <span>
+                    ◷
+                </span>
+
+                <span>
+                    Focus
+                </span>
+
+            </a>
+
+
+            <a href="#">
+
+                <span>
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="profile">
+
+            <span class="avatar">
+                A
+            </span>
+
+
+            <div>
+
+                <b>
+                    Ali
+                </b>
+
+                <small>
+                    Student
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="app-main">
+
+
+        <!-- Header -->
+
+        <header class="app-header">
+
+
+            <div>
+
+                <p class="muted">
+                    YOUR WEEK
+                </p>
+
+
+                <h1>
+                    Timetable
+                </h1>
+
+            </div>
+
+
+            <button class="button primary small"
+                    onclick="openModal('class-modal')">
+
+                + Add class
+
+            </button>
+
+
+        </header>
+
+
+
+        <!-- ======================================
+             TIMETABLE CONTENT
+        ======================================= -->
+
+        <section class="app-content">
+
+
+            <div class="card">
+
+
+                <!-- Week navigation -->
+
+                <div class="week-head">
+
+
+                    <button onclick="changeWeek(-1)"
+                            aria-label="Previous week">
+
+                        ←
+
+                    </button>
+
+
+                    <div>
+
+                        <p class="muted"
+                           style="text-align:center;">
+
+                            WEEKLY SCHEDULE
+
+                        </p>
+
+                        <h2>
+
+                            This week
+
+                        </h2>
+
+                    </div>
+
+
+                    <button onclick="changeWeek(1)"
+                            aria-label="Next week">
+
+                        →
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- Timetable -->
+
+                <div id="timetable-grid"
+                     class="timetable-grid">
+
+                    <!-- JavaScript creates the timetable -->
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     ADD CLASS MODAL
+=========================================== -->
+
+<div id="class-modal"
+     class="modal">
+
+
+    <div class="modal-box">
+
+
+        <button class="modal-close"
+                onclick="closeModal('class-modal')">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Add a class
+        </h2>
+
+
+        <p class="modal-description">
+
+            Add a class to your weekly timetable.
+
+        </p>
+
+
+        <form onsubmit="addClass(event)">
+
+
+            <!-- Course -->
+
+            <label>
+
+                Course
+
+                <select id="class-course"
+                        required>
+
+                </select>
+
+            </label>
+
+
+
+            <!-- Day -->
+
+            <label>
+
+                Day
+
+                <select id="class-day"
+                        required>
+
+                    <option>
+                        Monday
+                    </option>
+
+                    <option>
+                        Tuesday
+                    </option>
+
+                    <option>
+                        Wednesday
+                    </option>
+
+                    <option>
+                        Thursday
+                    </option>
+
+                    <option>
+                        Friday
+                    </option>
+
+                    <option>
+                        Saturday
+                    </option>
+
+                </select>
+
+            </label>
+
+
+
+            <!-- Time -->
+
+            <div class="form-two">
+
+
+                <label>
+
+                    Start time
+
+                    <input id="class-start"
+                           type="time"
+                           required>
+
+                </label>
+
+
+                <label>
+
+                    End time
+
+                    <input id="class-end"
+                           type="time"
+                           required>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- Room -->
+
+            <label>
+
+                Room
+
+                <input id="class-room"
+                       type="text"
+                       placeholder="C-203">
+
+            </label>
+
+
+
+            <!-- Class type -->
+
+            <label>
+
+                Type
+
+                <select id="class-type">
+
+                    <option>
+                        Lecture
+                    </option>
+
+                    <option>
+                        Lab
+                    </option>
+
+                    <option>
+                        Tutorial
+                    </option>
+
+                </select>
+
+            </label>
+
+
+
+            <!-- Submit -->
+
+            <button class="button primary full"
+                    type="submit">
+
+                Add class
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+=========================================== -->
+
+<script src="js/app.js"></script>
+
+
+<script>
+
+    renderTimetable();
+
+    populateCourseSelect("class-course");
+
+</script>
+
+
+</body>
+
+</html>

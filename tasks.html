@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UniFlow — Tasks</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body class="app-page">
+
+
+<div class="app-layout">
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Logo -->
+
+        <a href="index.html"
+           class="brand">
+
+            <span class="brand-mark">
+                ✦
+            </span>
+
+            <span class="brand-text">
+                UniFlow
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <p class="nav-label">
+            WORKSPACE
+        </p>
+
+
+        <nav>
+
+            <a href="dashboard.html">
+
+                <span>⌂</span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="timetable.html">
+
+                <span>▦</span>
+
+                <span>
+                    Timetable
+                </span>
+
+            </a>
+
+
+            <a href="tasks.html"
+               class="active">
+
+                <span>✓</span>
+
+                <span>
+                    Tasks
+                </span>
+
+            </a>
+
+
+            <a href="courses.html">
+
+                <span>◫</span>
+
+                <span>
+                    Courses
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Personal -->
+
+        <p class="nav-label">
+            PERSONAL
+        </p>
+
+
+        <nav>
+
+            <a href="#">
+
+                <span>
+                    ◷
+                </span>
+
+                <span>
+                    Focus
+                </span>
+
+            </a>
+
+
+            <a href="#">
+
+                <span>
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Profile -->
+
+        <div class="profile">
+
+            <span class="avatar">
+                A
+            </span>
+
+
+            <div>
+
+                <b>
+                    Ali
+                </b>
+
+                <small>
+                    Student
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="app-main">
+
+
+        <!-- Header -->
+
+        <header class="app-header">
+
+
+            <div>
+
+                <p class="muted">
+                    STAY ON TRACK
+                </p>
+
+
+                <h1>
+                    Tasks
+                </h1>
+
+            </div>
+
+
+            <button class="button primary small"
+                    onclick="openModal('task-modal')">
+
+                + Add task
+
+            </button>
+
+
+        </header>
+
+
+
+        <!-- ======================================
+             TASK CONTENT
+        ======================================= -->
+
+        <section class="app-content">
+
+
+            <div class="card">
+
+
+                <div class="card-head">
+
+
+                    <div>
+
+                        <small>
+                            YOUR TASKS
+                        </small>
+
+
+                        <h2 id="tasks-page-count">
+
+                            0 tasks
+
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Task list -->
+
+                <div id="task-list">
+
+                    <!-- JavaScript inserts tasks here -->
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     ADD TASK MODAL
+=========================================== -->
+
+<div id="task-modal"
+     class="modal">
+
+
+    <div class="modal-box">
+
+
+        <!-- Close -->
+
+        <button class="modal-close"
+                onclick="closeModal('task-modal')">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Add a task
+        </h2>
+
+
+        <p class="modal-description">
+
+            Add an assignment, quiz, study task,
+            or anything you need to complete.
+
+        </p>
+
+
+
+        <form onsubmit="addTask(event)">
+
+
+            <!-- Task name -->
+
+            <label>
+
+                Task name
+
+                <input id="task-name"
+                       type="text"
+                       placeholder="e.g. OOP Assignment"
+                       required>
+
+            </label>
+
+
+
+            <!-- Course -->
+
+            <label>
+
+                Course
+
+                <select id="task-course"
+                        required>
+
+                </select>
+
+            </label>
+
+
+
+            <!-- Due date -->
+
+            <label>
+
+                Due date
+
+                <input id="task-due"
+                       type="date">
+
+            </label>
+
+
+
+            <!-- Submit -->
+
+            <button class="button primary full"
+                    type="submit">
+
+                Add task
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+=========================================== -->
+
+<script src="js/app.js"></script>
+
+
+<script>
+
+    renderTasks();
+
+    populateCourseSelect("task-course");
+
+</script>
+
+
+</body>
+
+</html>

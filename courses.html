@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UniFlow — Courses</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body class="app-page">
+
+
+<div class="app-layout">
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Logo -->
+
+        <a href="index.html"
+           class="brand">
+
+            <span class="brand-mark">
+                ✦
+            </span>
+
+            <span class="brand-text">
+                UniFlow
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <p class="nav-label">
+            WORKSPACE
+        </p>
+
+
+        <nav>
+
+
+            <a href="dashboard.html">
+
+                <span>
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="timetable.html">
+
+                <span>
+                    ▦
+                </span>
+
+                <span>
+                    Timetable
+                </span>
+
+            </a>
+
+
+            <a href="tasks.html">
+
+                <span>
+                    ✓
+                </span>
+
+                <span>
+                    Tasks
+                </span>
+
+            </a>
+
+
+            <a href="courses.html"
+               class="active">
+
+                <span>
+                    ◫
+                </span>
+
+                <span>
+                    Courses
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- Personal -->
+
+        <p class="nav-label">
+            PERSONAL
+        </p>
+
+
+        <nav>
+
+
+            <a href="#">
+
+                <span>
+                    ◷
+                </span>
+
+                <span>
+                    Focus
+                </span>
+
+            </a>
+
+
+            <a href="#">
+
+                <span>
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- User profile -->
+
+        <div class="profile">
+
+
+            <span class="avatar">
+                A
+            </span>
+
+
+            <div>
+
+                <b>
+                    Ali
+                </b>
+
+                <small>
+                    Student
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="app-main">
+
+
+        <!-- Header -->
+
+        <header class="app-header">
+
+
+            <div>
+
+                <p class="muted">
+                    YOUR SEMESTER
+                </p>
+
+
+                <h1>
+                    Courses
+                </h1>
+
+            </div>
+
+
+            <button class="button primary small"
+                    onclick="openModal('course-modal')">
+
+                + Add course
+
+            </button>
+
+
+        </header>
+
+
+
+        <!-- ======================================
+             COURSES CONTENT
+        ======================================= -->
+
+        <section class="app-content">
+
+
+            <div id="course-list"
+                 class="course-grid">
+
+                <!--
+                    JavaScript will generate
+                    the course cards here.
+                -->
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     ADD COURSE MODAL
+=========================================== -->
+
+<div id="course-modal"
+     class="modal">
+
+
+    <div class="modal-box">
+
+
+        <!-- Close button -->
+
+        <button class="modal-close"
+                onclick="closeModal('course-modal')">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Add a course
+        </h2>
+
+
+        <p class="modal-description">
+
+            Add a subject from your current semester.
+
+        </p>
+
+
+
+       <form onsubmit="handleCourseSubmit(event)">
+
+
+            <!-- Course name -->
+
+            <label>
+
+                Course name
+
+                <input id="course-name"
+                       type="text"
+                       placeholder="e.g. Object Oriented Programming"
+                       required>
+
+            </label>
+
+
+
+            <!-- Course code -->
+
+            <label>
+
+                Course code
+
+                <input id="course-code"
+                       type="text"
+                       placeholder="e.g. CS202">
+
+            </label>
+
+
+
+            <!-- Progress -->
+
+            <label>
+
+                Current progress (%)
+
+                <input id="course-progress"
+                       type="number"
+                       min="0"
+                       max="100"
+                       value="0">
+
+            </label>
+
+
+
+            <!-- Submit -->
+
+            <button class="button primary full"
+                    type="submit">
+
+                Add course
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+=========================================== -->
+
+<script src="js/app.js"></script>
+
+
+<script>
+
+    renderCourses();
+
+</script>
+
+
+</body>
+
+</html>

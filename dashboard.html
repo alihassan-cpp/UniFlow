@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UniFlow — Dashboard</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body class="app-page">
+
+
+<div class="app-layout">
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Logo -->
+
+        <a href="index.html"
+           class="brand">
+
+            <span class="brand-mark">
+                ✦
+            </span>
+
+            <span class="brand-text">
+                UniFlow
+            </span>
+
+        </a>
+
+
+        <!-- Main navigation -->
+
+        <p class="nav-label">
+            WORKSPACE
+        </p>
+
+
+        <nav>
+
+            <a href="dashboard.html"
+               class="active">
+
+                <span>⌂</span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="timetable.html">
+
+                <span>▦</span>
+
+                <span>
+                    Timetable
+                </span>
+
+            </a>
+
+
+            <a href="tasks.html">
+
+                <span>✓</span>
+
+                <span>
+                    Tasks
+                </span>
+
+            </a>
+
+
+            <a href="courses.html">
+
+                <span>◫</span>
+
+                <span>
+                    Courses
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Personal -->
+
+        <p class="nav-label">
+
+            PERSONAL
+
+        </p>
+
+
+        <nav>
+
+            <a href="#">
+
+                <span>
+                    ◷
+                </span>
+
+                <span>
+                    Focus
+                </span>
+
+            </a>
+
+
+            <a href="#">
+
+                <span>
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- User profile -->
+
+        <div class="profile">
+
+            <span class="avatar">
+                A
+            </span>
+
+
+            <div>
+
+                <b>
+                    Ali
+                </b>
+
+                <small>
+                    Student
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="app-main">
+
+
+        <!-- Header -->
+
+        <header class="app-header">
+
+
+            <div>
+
+                <p class="muted">
+
+                    TUESDAY, AUGUST 25
+
+                </p>
+
+
+                <h1>
+
+                    Good morning, Ali.
+
+                </h1>
+
+            </div>
+
+
+            <a href="tasks.html"
+               class="button primary small">
+
+                + Add task
+
+            </a>
+
+
+        </header>
+
+
+
+        <!-- ======================================
+             DASHBOARD CONTENT
+        ======================================= -->
+
+        <section class="app-content">
+
+
+
+            <!-- ==================================
+                 NEXT CLASS
+            =================================== -->
+
+            <div id="next-class"
+                 class="next-class">
+
+                <!-- JavaScript will populate this -->
+
+            </div>
+
+
+
+            <!-- ==================================
+                 TWO COLUMN AREA
+            =================================== -->
+
+            <div class="dashboard-grid">
+
+
+
+                <!-- ==============================
+                     TODAY'S TASKS
+                =============================== -->
+
+                <div class="card">
+
+
+                    <div class="card-head">
+
+
+                        <div>
+
+                            <small>
+                                TODAY'S TASKS
+                            </small>
+
+
+                            <h2 id="task-count">
+
+                                0 tasks
+
+                            </h2>
+
+                        </div>
+
+
+                        <a href="tasks.html">
+
+                            View all →
+
+                        </a>
+
+
+                    </div>
+
+
+                    <div id="dashboard-tasks">
+
+                        <!-- Tasks inserted by JavaScript -->
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ==============================
+                     COURSE PROGRESS
+                =============================== -->
+
+                <div class="card">
+
+
+                    <div class="card-head">
+
+
+                        <div>
+
+                            <small>
+                                COURSE PROGRESS
+                            </small>
+
+
+                            <h2>
+
+                                This semester
+
+                            </h2>
+
+                        </div>
+
+
+                        <a href="courses.html">
+
+                            Courses →
+
+                        </a>
+
+
+                    </div>
+
+
+                    <div id="dashboard-courses">
+
+                        <!-- Courses inserted by JavaScript -->
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 TODAY'S SCHEDULE
+            =================================== -->
+
+            <div class="card">
+
+
+                <div class="card-head">
+
+
+                    <div>
+
+                        <small>
+                            TODAY
+                        </small>
+
+
+                        <h2>
+
+                            Your schedule
+
+                        </h2>
+
+                    </div>
+
+
+                    <a href="timetable.html">
+
+                        Full timetable →
+
+                    </a>
+
+
+                </div>
+
+
+                <div id="today-schedule">
+
+                    <!-- Schedule inserted by JavaScript -->
+
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- JavaScript -->
+
+<script src="js/app.js"></script>
+
+
+<script>
+
+    renderDashboard();
+
+</script>
+
+
+</body>
+
+</html>
