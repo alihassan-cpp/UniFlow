@@ -43,28 +43,6 @@ Future versions may include:
 - Notifications
 - Cloud-based data synchronization
 
-##  Development Roadmap
-
-```text
-V1
-Frontend
-  ↓
-Backend API
-  ↓
-Database
-  ↓
-Authentication
-  ↓
-Docker
-  ↓
-CI/CD
-  ↓
-Cloud Deployment
-
-In development
-
-UniFlow is an ongoing project that will gradually evolve as new software engineering and cloud technologies are learned.
-
 Author
 
 Ali Hassan
